@@ -17,6 +17,7 @@
   "homepage": "https://github.com/utkarsh-sharma-8/nodeProject#readme",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
   }
 }
