@@ -29,4 +29,18 @@ const findUser=async()=>{
         throw new Error(`Error fetching users: ${error.message}`);
     }
 }
-module.exports={saveUser, findUser};
+
+const deleteUser=async(email)=>{
+    try{
+        const result=await User.collection.deleteOne({email});
+
+        if(result.acknowledged) {
+            return {success: true,id:result.insertedId};
+        }else{
+            throw new error(`Failed To Delete User`);
+        }
+    }catch(error){
+        throw new Error(`Error Deleting User: ${error}`);
+    }
+}
+module.exports={saveUser, findUser, deleteUser};
